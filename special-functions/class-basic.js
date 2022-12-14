@@ -17,6 +17,6 @@ class ClassAccount {
   bank = 'CHASE';
 }
 
-joy = new ClassAccount('Joy', 100);
-console.log(joy);
-joy.deposit(200);
+has = new ClassAccount('Has', 100);
+console.log(has);
+has.deposit(200);
