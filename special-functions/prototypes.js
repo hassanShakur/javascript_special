@@ -17,6 +17,6 @@ Account.prototype.deposit = function (amount) {
 };
 
 console.log(Account.prototype);
-Hassan = new Account('Shaks', 300);
+Hassan = new Account('Has', 300);
 Hassan.deposit(200);
 console.log(Hassan.bank);
