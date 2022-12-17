@@ -37,10 +37,6 @@ const images = [
         name: 'City 9',
         src: './images/city/city-9.jpg',
       },
-      {
-        name: 'City 10',
-        src: './images/city/city-10.jpg',
-      },
     ],
 
     home: [
@@ -79,10 +75,6 @@ const images = [
       {
         name: 'home 9',
         src: './images/home/home-9.jpg',
-      },
-      {
-        name: 'home 10',
-        src: './images/home/home-10.jpg',
       },
     ],
   },
