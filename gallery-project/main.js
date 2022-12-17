@@ -69,7 +69,7 @@ const images = [
         src: './images/home/home-7.jpg',
       },
       {
-        name: 'City 8',
+        name: 'home 8',
         src: './images/home/home-8.jpg',
       },
       {

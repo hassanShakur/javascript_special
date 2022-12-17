@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
+:root {
+  --transition: all .6s ease-in-out;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -72,10 +76,12 @@ article .image img {
   overflow-x: hidden;
   color: aliceblue;
   background-color: black;
-  z-index: 10;
-  display: grid;
+  z-index: -10;
+  opacity: 0;
+  display: block;
   padding: 2vw 10vw;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  transition: var(--transition);
+  /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
 }
 
 .open .image img {
