@@ -26,3 +26,12 @@ function loadImage(url) {
     img.src = url;
   });
 }
+
+// Async await is a simpler syntax
+// async function someFunction () {
+//   await
+// }
+
+// const func = async () {
+//   await...
+// }
