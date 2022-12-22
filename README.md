@@ -17,30 +17,29 @@ Some common JS concepts, OOP and Classes
 
 - Promises - Resolve - Reject
 
-      ```js
-          btn.addEventListener('click', () => {
-
+```js
+btn.addEventListener('click', () => {
   loadImage(url)
-  .then((data) => {
-  cont.appendChild(data);
-  })
-  .catch((err) => {
-  console.log(err);
-  });
-  });
+    .then((data) => {
+      cont.appendChild(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 function loadImage(url) {
-return new Promise((resolve, reject) => {
-let img = new Image();
-img.addEventListener('load', () => {
-// Resolve fires
-resolve(img);
-});
-img.addEventListener('error', () => {
-// Something went wrong - reject fires
-reject(`Something wrong with the url ${url}`);
-});
-img.src = url;
-});
+  return new Promise((resolve, reject) => {
+    let img = new Image();
+    img.addEventListener('load', () => {
+      // Resolve fires
+      resolve(img);
+    });
+    img.addEventListener('error', () => {
+      // Something went wrong - reject fires
+      reject(`Something wrong with the url ${url}`);
+    });
+    img.src = url;
+  });
 }
 ```
