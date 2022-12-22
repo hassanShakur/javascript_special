@@ -21,7 +21,7 @@ function loadImage(url) {
     });
     img.addEventListener('error', () => {
       // Something went wrong - reject fires
-      reject(`Something wrong with the url ${url}`);
+      reject(new Error(`Something wrong with the url ${url}`));
     });
     img.src = url;
   });

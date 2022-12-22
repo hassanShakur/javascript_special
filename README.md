@@ -15,7 +15,9 @@ Some common JS concepts, OOP and Classes
 
 ## Asynchronous JS
 
-- Promises - Resolve - Reject
+- Promises
+  - Resolve (.then)
+  - Reject (.catch)
 
 ```js
 btn.addEventListener('click', () => {
@@ -32,12 +34,10 @@ function loadImage(url) {
   return new Promise((resolve, reject) => {
     let img = new Image();
     img.addEventListener('load', () => {
-      // Resolve fires
       resolve(img);
     });
     img.addEventListener('error', () => {
-      // Something went wrong - reject fires
-      reject(`Something wrong with the url ${url}`);
+      reject(new Error(`Something wrong with the url ${url}`));
     });
     img.src = url;
   });
