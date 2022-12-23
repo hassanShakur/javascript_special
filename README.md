@@ -63,3 +63,28 @@ xhr.onreadystatechange = () => {
 
 xhr.send();
 ```
+
+### Fetch
+
+Similar to xhr but has a much simpler, cleaner syntax. Fetch returns a response in form of a string which can be converted to a json using .json() - A method that rturns a Promise that can be handled as any other object.
+
+```js
+fetch(url)
+  .then((Response) => Response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+Same thing can be accomplished using async wait functions with fetch... Enclose em in try catch blocks if you may.
+
+```js
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+});
+```
