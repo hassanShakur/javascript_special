@@ -88,7 +88,9 @@ These are anonymous functions called only once during their creation and as they
 
 ### Closure
 
+Closure gives a function access to parent function variables even after the parent function is done with execution and has returned.
 Is a way of variable protection from being accessed outside the defining function.
+Use `console.dir(returnedFunc)` to see the variable environment in the closure involved.
 
 #### Simple Example
 
