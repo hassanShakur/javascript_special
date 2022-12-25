@@ -29,9 +29,9 @@ console.log(list[0]?.name ?? 'List is empty');
 
 ### Nullish Coalescing Operator (`??`)
 
-Returns `false` only if the conndition is undefined or null. Other values like empty strings, 0 etc. are considered true.
+Returns `false` only if the conndition is `undefined` or `null`. Other values like empty strings, 0 etc. are considered true.
 
-### Map Object
+### Map Iterable
 
 Map is similar to objects but the keys can be anything unlike in objects where the keys are strings.
 
@@ -59,7 +59,7 @@ map.set(arr, 'Array as key');
 map.get(arr);
 ```
 
-Instead of using `set`, a simpler syntax is using array of arrays like the result of using `Object.entries()` to set map items.
+Instead of using `set`, a simpler syntax is using array of arrays like the result of using `Object.entries()` to set map items. Map iterables also have the methods `.entries()`, `.keys()` and `.values()`.
 
 ````js
 const betterMap = new Map([
@@ -71,6 +71,75 @@ const betterMap = new Map([
 
 const otherMap = new Map(Object.entries(someObject));
 ````
+
+### Immediately Invoked Function Expressions (IIFE)
+
+These are anonymous functions called only once during their creation and as they don\`t have a name, they cannot be recalled. They are enclosed in brackets to look like `expressions` and then invoked directly.
+
+```js
+(function () {
+  /* Code goes here*/
+})();
+
+// Or for `arrow functions`
+
+(() => {})();
+```
+
+### Closure
+
+Is a way of variable protection from being accessed outside the defining function.
+
+#### Simple Example
+
+![Closure example](images/closure.png)
+
+#### Application Example
+
+```js
+// Protection of variables mainly
+
+function newAccount(name, initialBalance) {
+  let balance = initialBalance;
+
+  function showBalance() {
+    console.log(`Hello ${name}, balance is ${balance}`);
+  }
+
+  function deposit(amount) {
+    if (amount) {
+      balance += amount;
+    }
+    showBalance();
+  }
+
+  function withdraw(amount) {
+    if (amount > balance) {
+      console.log('Insufficient funds...');
+      return;
+    }
+    if (amount) {
+      balance -= amount;
+    }
+    showBalance();
+  }
+
+  return {
+    showBalance: showBalance,
+    deposit: deposit,
+    withdraw: withdraw,
+  };
+}
+
+const testAccount = newAccount('Han', 200);
+testAccount.showBalance();
+testAccount.deposit(300);
+testAccount.showBalance();
+testAccount.withdraw(400);
+
+// Cant control the balance
+testAccount.balance = 9000;
+```
 
 ## Asynchronous JS
 
@@ -125,7 +194,7 @@ xhr.send();
 
 ### Fetch
 
-Similar to `xhr` but has a much simpler, cleaner syntax. `Fetch` returns a response in form of a string which can be converted to a json using .json() - A method that rturns a Promise that can be handled as any other object.
+Similar to `xhr` but has a much simpler, cleaner syntax. `Fetch` returns a response in form of a string which can be converted to a json using `.json()` - A method that returns a `Promise` that can be handled as any other object.
 
 ```js
 fetch(url)
@@ -134,7 +203,7 @@ fetch(url)
   .catch((error) => console.log(error));
 ```
 
-Same thing can be accomplished using async wait functions with fetch... Enclose em in try catch blocks if you may.
+Same thing can be accomplished using `async await` functions with fetch... Enclose em in `try catch` blocks if you may.
 
 ```js
 document.addEventListener('DOMContentLoaded', async () => {
