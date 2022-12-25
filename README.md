@@ -1,4 +1,4 @@
-# javascript_special
+# JavaScript Special
 
 Some common JS concepts, OOP and Classes
 
@@ -13,11 +13,70 @@ Some common JS concepts, OOP and Classes
 - Set
 - Others
 
+### Optional Chaining
+
+Helps prevent errors in case a property does not exist, returning undefined instead. Syntax is using `?.` before upcoming properties.
+
+```js
+restaurants?.openingHours?.mon?.time ?? defaultValue = whatever;
+
+// Or
+
+const list = [];
+console.log(list[0]?.name ?? 'List is empty');
+
+```
+
+### Nullish Coalescing Operator (`??`)
+
+Returns `false` only if the conndition is undefined or null. Other values like empty strings, 0 etc. are considered true.
+
+### Map Object
+
+Map is similar to objects but the keys can be anything unlike in objects where the keys are strings.
+
+```js
+// ! Properties are set, get, size, clear, delete.
+
+const map = new Map();
+
+map.set(1, 'foo');
+// * Set property returns a map and other map properties can be stringed along as...
+
+map.set(2, 'two').set(true, 'true value').set('categories', ['list1', 'list2']);
+
+console.log(map.get('categories'));
+console.log(map.size);
+console.log(map.delete(false));
+map.clear();
+```
+
+To use arrays as keys, the array must first be initialized so it points to the same address that can be used in the `get` method.
+
+```js
+const arr = [1, 2];
+map.set(arr, 'Array as key');
+map.get(arr);
+```
+
+Instead of using `set`, a simpler syntax is using array of arrays like the result of using `Object.entries()` to set map items.
+
+````js
+const betterMap = new Map([
+  [1, 'one'], // item 1
+  [2, 'two'], // item 2
+]);
+
+// Or use a ```Object.entries()``` method to create a new map.
+
+const otherMap = new Map(Object.entries(someObject));
+````
+
 ## Asynchronous JS
 
 - Promises
-  - Resolve (.then)
-  - Reject (.catch)
+  - Resolve `.then`
+  - Reject `.catch`
 
 ```js
 btn.addEventListener('click', () => {
@@ -66,7 +125,7 @@ xhr.send();
 
 ### Fetch
 
-Similar to xhr but has a much simpler, cleaner syntax. Fetch returns a response in form of a string which can be converted to a json using .json() - A method that rturns a Promise that can be handled as any other object.
+Similar to `xhr` but has a much simpler, cleaner syntax. `Fetch` returns a response in form of a string which can be converted to a json using .json() - A method that rturns a Promise that can be handled as any other object.
 
 ```js
 fetch(url)
