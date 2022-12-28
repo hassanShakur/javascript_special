@@ -13,6 +13,15 @@ Some common JS concepts, OOP and Classes
 - Set
 - Others
 
+#### Array.from
+
+Can be used to create arrays from array like structures. First parameter is an `iterable` and second a `callback function`.
+This example creates an array from 1 to 8
+
+```js
+Array.from({ length: 8 }, (_, i) => i + 1);
+```
+
 ### Optional Chaining
 
 Helps prevent errors in case a property does not exist, returning undefined instead. Syntax is using `?.` before upcoming properties.
