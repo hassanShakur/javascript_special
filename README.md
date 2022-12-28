@@ -13,6 +13,8 @@ Some common JS concepts, OOP and Classes
 - Set
 - Others
 
+### Array Methods
+
 #### Array.from
 
 Can be used to create arrays from array like structures. First parameter is an `iterable` and second a `callback function`.
@@ -21,6 +23,11 @@ This example creates an array from 1 to 8
 ```js
 Array.from({ length: 8 }, (_, i) => i + 1);
 ```
+
+#### Flat and Flatmap
+
+Flat `arr.flat()` reduces a nested array to a single un-nested one. It takes 1 parameter defining the nesting depth to undo. Default is 1.
+`Flatmap` is similar but instead of depth parameter, it takes a callback function to iterate the array. Depth is therefore always 1 but results of the callback is from an array that was first mapped then flattened (`map` first then `flat`).
 
 ### Optional Chaining
 
