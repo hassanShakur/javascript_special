@@ -1,5 +1,18 @@
 # JavaScript Special
 
+## DOM Manipulation
+
+### IntersectionObserver API
+
+Used in doing certain DOM manipulations upon intersection of defined DOM elements. Example is as below:
+
+![IntersectionObserver API](images/IntersectionObserver%20API.png)
+
+- `root: null` specifiies intersection with element with the current view port
+- `threshhold` can take one value or an array. They all specify at what percentage after intersection with element should the observer fire an entry. 0.2 will result in an entry after 20% of the element intersects with the root in this case.
+- `rootMargin` offers the margin to the threshold. If `-value`px, it will fire an entryat `value`px before the `threshold` is met.
+- The callback takes parameters as entries and the observer set, in this case the `elementObserver` observer.
+
 ### Smooth Scroll
 
 ```js
@@ -226,6 +239,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(error);
   }
 });
+```
+
+### Extras
+
+Random number between 2 specified limits
+
+```js
+Math.floor(Math.random() * (max - min + 1) + min);
 ```
 
 Some common JS concepts, OOP and Classes
