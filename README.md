@@ -1,17 +1,10 @@
 # JavaScript Special
 
-Some common JS concepts, OOP and Classes
+### Smooth Scroll
 
-- Apply()
-- Bind()
-- String template literal tagging function
-- ES 6
-- Object convertion to array using:
-  - Object.keys()
-  - Object.values()
-  - Object.entries()
-- Set
-- Others
+```js
+sectionToScrollTo.scrollIntoView({ behaviour: 'smooth' });
+```
 
 ### Array Methods
 
@@ -234,3 +227,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 ```
+
+Some common JS concepts, OOP and Classes
+
+- Apply()
+- Bind()
+- String template literal tagging function
+- ES 6
+- Object convertion to array using:
+  - Object.keys()
+  - Object.values()
+  - Object.entries()
+- Set
